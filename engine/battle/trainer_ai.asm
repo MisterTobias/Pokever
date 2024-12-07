@@ -345,7 +345,7 @@ CooltrainerFAI:
 	; The intended 25% chance to consider switching will not apply.
 	; Uncomment the line below to fix this.
 	cp 25 percent + 1
-	ret nc
+	; ret nc
 	ld a, 10
 	call AICheckIfHPBelowFraction
 	jp c, AIUseHyperPotion
@@ -386,9 +386,6 @@ KogaAI:
 
 BlaineAI:
 	cp 25 percent + 1
-	ret nc
-	ld a, 10
-	call AICheckIfHPBelowFraction
 	ret nc
 	jp AIUseSuperPotion
 
@@ -552,9 +549,6 @@ AIPrintItemUseAndUpdateHPBar:
 	xor a
 	ld [wHPBarType], a
 	predef UpdateHPBar2
-	push af
-	farcall DrawEnemyHUDAndHPBar
-	pop af
 	jp DecrementAICount
 
 AISwitchIfEnoughMons:
@@ -639,9 +633,6 @@ AICureStatus:
 	ld [wEnemyMonStatus], a ; clear status of active enemy
 	ld hl, wEnemyBattleStatus3
 	res BADLY_POISONED, [hl]
-	push af
-	farcall DrawEnemyHUDAndHPBar
-	pop af
 	ret
 
 AIUseXAccuracy: ; unused

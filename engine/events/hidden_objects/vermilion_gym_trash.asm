@@ -58,13 +58,11 @@ GymTrashScript:
 
 	ldh [hGymTrashCanRandNumMask], a
 	push hl
-.tryagain
 	call Random
 	swap a
 	ld b, a
 	ldh a, [hGymTrashCanRandNumMask]
 	and b
-	jr z, .tryagain
 	dec a
 	pop hl
 

@@ -79,12 +79,7 @@ PokemonTower7FWarpToMrFujiHouseScript:
 	ld a, LAVENDER_TOWN
 	ld [wLastMap], a
 	ld hl, wStatusFlags3
-	set 2, [hl]
-	ld hl, wStatusFlags3
 	set BIT_WARP_FROM_CUR_SCRIPT, [hl]
-	ld a, HS_ANNIHILAPE
-	ld [wMissableObjectIndex], a
-	ld [wMissableObjectIndex], a
 	ld a, SCRIPT_POKEMONTOWER7F_DEFAULT
 	ld [wPokemonTower7FCurScript], a
 	ld [wCurMapScript], a
@@ -194,11 +189,10 @@ PokemonTower7FRocket3ExitRightDownMovement:
 
 PokemonTower7F_TextPointers:
 	def_text_pointers
-	dw_const PokemonTower7FRocket1Text,    TEXT_POKEMONTOWER7F_ROCKET1
-	dw_const PokemonTower7FRocket2Text,    TEXT_POKEMONTOWER7F_ROCKET2
-	dw_const PokemonTower7FRocket3Text,    TEXT_POKEMONTOWER7F_ROCKET3
-	dw_const PokemonTower7FMrFujiText,     TEXT_POKEMONTOWER7F_MR_FUJI
-	dw_const PokemonTower7FAnnihilapeText, TEXT_POKEMONTOWER7F_ANNIHILAPE
+	dw_const PokemonTower7FRocket1Text, TEXT_POKEMONTOWER7F_ROCKET1
+	dw_const PokemonTower7FRocket2Text, TEXT_POKEMONTOWER7F_ROCKET2
+	dw_const PokemonTower7FRocket3Text, TEXT_POKEMONTOWER7F_ROCKET3
+	dw_const PokemonTower7FMrFujiText,  TEXT_POKEMONTOWER7F_MR_FUJI
 
 PokemonTower7TrainerHeaders:
 	def_trainers
@@ -208,8 +202,6 @@ PokemonTower7TrainerHeader1:
 	trainer EVENT_BEAT_POKEMONTOWER_7_TRAINER_1, 3, PokemonTower7FRocket2BattleText, PokemonTower7FRocket2EndBattleText, PokemonTower7FRocket2AfterBattleText
 PokemonTower7TrainerHeader2:
 	trainer EVENT_BEAT_POKEMONTOWER_7_TRAINER_2, 3, PokemonTower7FRocket3BattleText, PokemonTower7FRocket3EndBattleText, PokemonTower7FRocket3AfterBattleText
-AnnihilapeTrainerHeader:
-	trainer EVENT_BEAT_ANNIHILAPE, 9, AnnihilapeBattleText, AnnihilapeBattleText, AnnihilapeBattleText
 	db -1 ; end
 
 PokemonTower7FRocket1Text:
@@ -254,12 +246,6 @@ PokemonTower7FMrFujiText:
 	text_far _PokemonTower7FMrFujiRescueText
 	text_end
 
-PokemonTower7FAnnihilapeText:
-	text_asm
-	ld hl, AnnihilapeTrainerHeader
-	call TalkToTrainer
-	jp TextScriptEnd
-
 PokemonTower7FRocket1BattleText:
 	text_far _PokemonTower7FRocket1BattleText
 	text_end
@@ -295,14 +281,3 @@ PokemonTower7FRocket3EndBattleText:
 PokemonTower7FRocket3AfterBattleText:
 	text_far _PokemonTower7FRocket3AfterBattleText
 	text_end
-
-AnnihilapeBattleText:
-	text_far _AnnihilapeBattleText
-	text_asm
-	ld a, ANNIHILAPE
-	call PlayCry
-	call WaitForSoundToFinish
-	; ld a, HS_ANNIHILAPE
-	; ld [wMissableObjectIndex], a
-	; predef HideObject
-	jp TextScriptEnd

@@ -173,7 +173,7 @@ MonsterNames::
 	db "AERODACTYL"
 	db "MISSINGNO."
 	db "MAGNEMITE@"
-	db "ANNIHILAPE"
+	db "MISSINGNO."
 	db "MISSINGNO."
 	db "CHARMANDER"
 	db "SQUIRTLE@@"

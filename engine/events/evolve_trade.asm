@@ -15,8 +15,7 @@ EvolveTradeMon:
 ; This may have been why Red/Green's trades
 ; were used instead, where none can evolve.
 
-; This was fixed in Yellow and is also fixed
-; by me (following the wiki tutorial).  
+; This was fixed in Yellow.
 
 	ld a, [wInGameTradeReceiveMonName]
 
@@ -32,6 +31,9 @@ EvolveTradeMon:
 	ret nz
 
 .ok
+	ld a, [wPartyCount]
+	dec a
+	ld [wWhichPokemon], a
 	ld a, $1
 	ld [wForceEvolution], a
 	ld a, LINK_STATE_TRADING

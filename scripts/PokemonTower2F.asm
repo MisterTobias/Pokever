@@ -61,7 +61,7 @@ ENDC
 PokemonTower2FRivalEncounterEventCoords:
 	dbmapcoord 15,  5
 	dbmapcoord 14,  6
-	db -1 ; end
+	db $0F ; end? (should be $ff?)
 
 PokemonTower2FDefeatedRivalScript:
 	ld a, [wIsInBattle]

@@ -7,4 +7,4 @@ VendingPrices:
 	; item id, price
 	vend_item FRESH_WATER, 200
 	vend_item SODA_POP,    300
-	vend_item LEMONADE,    400
+	vend_item LEMONADE,    350

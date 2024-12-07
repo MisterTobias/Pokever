@@ -727,7 +727,6 @@ wSlotMachineWheel2TopTile:: db
 wSlotMachineWheel3BottomTile:: db
 wSlotMachineWheel3MiddleTile:: db
 wSlotMachineWheel3TopTile:: db
-wStartBattleLevels:: ds PARTY_LENGTH ; which is 6 bytes
 wPayoutCoins:: dw
 ; These flags are set randomly and control when the wheels stop.
 ; bit 6: allow the player to win in general
@@ -2201,11 +2200,7 @@ ENDU
 
 wTrainerHeaderPtr:: dw
 
-wCutTrees::
-; Check CutTreeLocations for the indexes
-	ds 3
-; unused?
-	ds 3
+	ds 6
 
 ; the trainer the player must face after getting a wrong answer in the Cinnabar
 ; gym quiz

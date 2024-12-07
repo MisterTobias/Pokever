@@ -1,6 +1,6 @@
 	db DEX_CLEFABLE ; pokedex id
 
-	db  95,  70,  73,  60,  95
+	db  95,  70,  73,  60,  85
 	;   hp  atk  def  spd  spc
 
 	db NORMAL, NORMAL ; type

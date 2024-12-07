@@ -305,7 +305,7 @@ SlotMachine_StopWheel1Early:
 .loop
 	ld a, [hli]
 	cp HIGH(SLOTS7)
-	jr z, .stopWheel
+	jr c, .stopWheel ; condition never true
 	dec c
 	jr nz, .loop
 	ret
@@ -330,13 +330,9 @@ SlotMachine_StopWheel2Early:
 ; player's odds.
 .sevenAndBarMode
 	call SlotMachine_FindWheel1Wheel2Matches
-	ret nz
 	ld a, [de]
 	cp HIGH(SLOTSBAR) + 1
-	jr c, .stopWheel
-	ld a, [wSlotMachineFlags]
-	bit 6, a
-	ret z
+	ret nc
 .stopWheel
 	xor a
 	ld [wSlotMachineWheel2SlipCounter], a

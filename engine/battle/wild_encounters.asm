@@ -24,11 +24,11 @@ TryDoWildEncounter:
 	ld [wRepelRemainingSteps], a
 .next
 ; determine if wild pokemon can appear in the half-block we're standing in
-; is the bottom left tile (8,9) of the half-block we're standing in a grass/water tile?
-; note that by using the bottom left tile, this prevents the "left-shore" tiles from generating grass encounters
-	hlcoord 8, 9
+; is the bottom right tile (9,9) of the half-block we're standing in a grass/water tile?
+	hlcoord 9, 9
 	ld c, [hl]
-	call TestGrassTile
+	ld a, [wGrassTile]
+	cp c
 	ld a, [wGrassRate]
 	jr z, .CanEncounter
 	ld a, $14 ; in all tilesets with a water tile, this is its id
@@ -99,18 +99,6 @@ TryDoWildEncounter:
 	ret
 .willEncounter
 	xor a
-	ret
-
-TestGrassTile:
-	ld a, [wGrassTile]
-	cp c
-	jr z, .return
-	ld a, [wCurMapTileset]
-	cp FOREST
-	jr nz, .return
-	ld a, $34	; check for the extra grass tile in the forest tileset
-	cp c
-.return
 	ret
 
 INCLUDE "data/wild/probabilities.asm"

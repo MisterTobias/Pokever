@@ -3,7 +3,28 @@
 ; b = Y
 ; c = X
 ReplaceTileBlock:
-	call FindTileBlock
+	call GetPredefRegisters
+	ld hl, wOverworldMap
+	ld a, [wCurMapWidth]
+	add $6
+	ld e, a
+	ld d, $0
+	add hl, de
+	add hl, de
+	add hl, de
+	ld e, $3
+	add hl, de
+	ld e, a
+	ld a, b
+	and a
+	jr z, .addX
+; add width * Y
+.addWidthYTimesLoop
+	add hl, de
+	dec b
+	jr nz, .addWidthYTimesLoop
+.addX
+	add hl, bc ; add X
 	ld a, [wNewTileBlockID]
 	ld [hl], a
 	ld a, [wCurrentTileBlockMapViewPointer]
@@ -102,33 +123,4 @@ CompareHLWithBC:
 	ret nz
 	ld a, l
 	sub c
-	ret
-
-; loads the current tile block into in [wNewTileBlockID]
-; b = Y
-; c = X
-; ret = hl = the ID of the currently loaded tile
-FindTileBlock:
-	call GetPredefRegisters
-	ld hl, wOverworldMap
-	ld a, [wCurMapWidth]
-	add $6
-	ld e, a
-	ld d, $0
-	add hl, de
-	add hl, de
-	add hl, de
-	ld e, $3
-	add hl, de
-	ld e, a
-	ld a, b
-	and a
-	jr z, .addX
-; add width * Y
-.addWidthYTimesLoop
-	add hl, de
-	dec b
-	jr nz, .addWidthYTimesLoop
-.addX
-	add hl, bc ; add X
 	ret

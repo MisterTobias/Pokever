@@ -1,6 +1,6 @@
 	db DEX_VENONAT ; pokedex id
 
-	db  60,  55,  50,  45,  55
+	db  60,  55,  50,  45,  40
 	;   hp  atk  def  spd  spc
 
 	db BUG, POISON ; type

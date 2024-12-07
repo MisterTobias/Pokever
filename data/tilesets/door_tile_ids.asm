@@ -12,7 +12,6 @@ DoorTileIDPointers:
 	dbw LAB,         .LabDoorTileIDs
 	dbw FACILITY,    .FacilityDoorTileIDs
 	dbw PLATEAU,     .PlateauDoorTileIDs
-	dbw INTERIOR,    .InteriorDoorTileIDs
 	db -1 ; end
 
 MACRO door_tiles
@@ -54,7 +53,3 @@ ENDM
 
 .PlateauDoorTileIDs:
 	door_tiles $3b, $1b
-
-.InteriorDoorTileIDs:
-	door_tiles $04, $15
-
