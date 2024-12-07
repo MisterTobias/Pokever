@@ -18,7 +18,12 @@ SafariZoneGate_ScriptPointers:
 SafariZoneGateDefaultScript:
 	ld hl, .PlayerNextToSafariZoneWorker1CoordsArray
 	call ArePlayerCoordsInArray
-	ret nc
+	jr c, .playerInfrontOfClerk
+	ld hl, .exitCoords
+	call ArePlayerCoordsInArray
+	jr c, .SafariZoneGateLeavingSafariScript
+	ret
+.playerInfrontOfClerk
 	ld a, TEXT_SAFARIZONEGATE_SAFARI_ZONE_WORKER1_1
 	ldh [hTextID], a
 	call DisplayTextID
@@ -47,6 +52,11 @@ SafariZoneGateDefaultScript:
 .PlayerNextToSafariZoneWorker1CoordsArray:
 	dbmapcoord  3,  2
 	dbmapcoord  4,  2
+	db -1 ; end
+
+.exitCoords
+	dbmapcoord  3,  0
+	dbmapcoord  4,  0
 	db -1 ; end
 
 SafariZoneGatePlayerMovingRightScript:

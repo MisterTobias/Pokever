@@ -562,6 +562,8 @@ TypeColorTable: ; Used for a select few sprites to be colorized based on attack 
 	db 7 ; PSYCHIC EQU $18
 	db 6 ; ICE EQU $19
 	db 1 ; DRAGON EQU $1A
+	db 7 ; DARK EQU $1B
+	db 7 ; FAIRY EQU $1C
 	assert_table_length NUM_TYPES
 
 INCLUDE "color/data/spritepalettes.asm"

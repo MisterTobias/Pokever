@@ -37,7 +37,7 @@ INCLUDE "engine/battle/move_effects/drain_hp.asm"
 INCLUDE "engine/menus/players_pc.asm"
 INCLUDE "engine/pokemon/remove_mon.asm"
 INCLUDE "engine/events/display_pokedex.asm"
-
+INCLUDE "engine/overworld/remove_cut_trees.asm" ; test if it "fits" here
 
 ; Hooks for color hack
 INCLUDE "color/cable_club.asm"

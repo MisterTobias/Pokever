@@ -681,6 +681,7 @@ CheckMapConnections::
 ; x#SPRITESTATEDATA2_IMAGEBASEOFFSET without loading any tile patterns.
 	farcall InitMapSprites
 	call LoadTileBlockMap
+	farcall RemoveAlreadyCutTrees
 	jp OverworldLoopLessDelay
 
 .didNotEnterConnectedMap
@@ -1904,7 +1905,7 @@ CollisionCheckOnWater::
 	ld d, a
 	ld a, [wSpritePlayerStateData1CollisionData]
 	and d ; check if a sprite is in the direction the player is trying to go
-	jr nz, .checkIfNextTileIsPassable ; bug?
+	jr nz, .collision
 	ld hl, TilePairCollisionsWater
 	call CheckForJumpingAndTilePairCollisions
 	jr c, .collision
@@ -2331,6 +2332,7 @@ LoadMapData::
 	call LoadMapHeader
 	farcall InitMapSprites ; load tile pattern data for sprites
 	call LoadTileBlockMap
+	farcall RemoveAlreadyCutTrees
 	call LoadTilesetTilePatternData
 	call LoadCurrentMapView
 

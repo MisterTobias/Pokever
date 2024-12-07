@@ -210,7 +210,6 @@ OneTwoAndText:
 	text_pause
 	text_asm
 	ld a, SFX_SWAP
-	call PlaySoundWaitForCurrent
 	ld hl, PoofText
 	ret
 
