@@ -36,7 +36,9 @@ VictoryRoad3FDefaultScript:
 	jp nc, .check_switch_hole
 	ld a, [wCoordIndex]
 	cp $1
-	jr nz, .handle_hole
+	jr nz, .handle_hole ; thomastenberge commit 5f1c0c3
+	ld de, wSprite07StateData1YPixels ; thomastenberge commit 5f1c0c3
+	callfar BoulderOnButtonAnim
 	ld hl, wCurrentMapScriptFlags
 	set BIT_CUR_MAP_LOADED_1, [hl]
 	SetEvent EVENT_VICTORY_ROAD_3_BOULDER_ON_SWITCH1

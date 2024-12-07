@@ -119,6 +119,8 @@ ScrollCreditsMonLeft:
 	ret
 
 ScrollCreditsMonLeft_SetSCX:
+	ld a, h ; 		thomastenberge Commit 9c893c8
+	ld [hSCX], a ;	thomastenberge Commit 9c893c8
 	ldh a, [rLY]
 	cp l
 	jr nz, ScrollCreditsMonLeft_SetSCX

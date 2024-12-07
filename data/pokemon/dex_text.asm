@@ -1398,6 +1398,16 @@ _MagnemiteDexEntry::
 	next "similar moves"
 	dex
 
+_AnnihilapeDexEntry::
+	text "Uses anti-gravity"
+	next "to stay suspended."
+	next "Appears without"
+
+	page "warning and uses"
+	next "THUNDER WAVE and"
+	next "similar moves"
+	dex
+
 _CharmanderDexEntry::
 	text "Obviously prefers"
 	next "hot places. When"

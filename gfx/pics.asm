@@ -768,6 +768,8 @@ VictreebelPicBack::   INCBIN "gfx/pokemon/gsback/victreebelb.pic"
 
 MewPicFront::         INCBIN "gfx/pokemon/gsfront/mew.pic"
 MewPicBack::          INCBIN "gfx/pokemon/gsback/mewb.pic"
+AnnihilapePicFront::  INCBIN "gfx/pokemon/gsfront/annihilape.pic"
+AnnihilapePicBack::   INCBIN "gfx/pokemon/gsback/annihilapeb.pic"
 
 FarfetchdPicFront::   INCBIN "gfx/pokemon/gsfront/farfetchd.pic"
 FarfetchdPicBack::    INCBIN "gfx/pokemon/gsback/farfetchdb.pic"

@@ -1,23 +1,23 @@
 ; mart inventories are below
 ; they are texts
 
-ViridianMartClerkText::
-	script_mart POKE_BALL, ANTIDOTE, PARLYZ_HEAL, BURN_HEAL
+;ViridianMartClerkText::
+;	script_mart POKE_BALL, ANTIDOTE, PARLYZ_HEAL, BURN_HEAL
 
-PewterMartClerkText::
-	script_mart POKE_BALL, POTION, ESCAPE_ROPE, ANTIDOTE, BURN_HEAL, AWAKENING, PARLYZ_HEAL
+;PewterMartClerkText::
+;	script_mart POKE_BALL, POTION, ESCAPE_ROPE, ANTIDOTE, BURN_HEAL, AWAKENING, PARLYZ_HEAL
 
-CeruleanMartClerkText::
-	script_mart POKE_BALL, POTION, REPEL, ANTIDOTE, BURN_HEAL, AWAKENING, PARLYZ_HEAL
+;CeruleanMartClerkText::
+;	script_mart POKE_BALL, POTION, REPEL, ANTIDOTE, BURN_HEAL, AWAKENING, PARLYZ_HEAL
 
-UnusedBikeShopClerkText:: ; unreferenced
-	script_mart BICYCLE
+;UnusedBikeShopClerkText:: ; unreferenced
+;	script_mart BICYCLE
 
-VermilionMartClerkText::
-	script_mart POKE_BALL, SUPER_POTION, ICE_HEAL, AWAKENING, PARLYZ_HEAL, REPEL
+;VermilionMartClerkText::
+;	script_mart POKE_BALL, SUPER_POTION, ICE_HEAL, AWAKENING, PARLYZ_HEAL, REPEL
 
-LavenderMartClerkText::
-	script_mart GREAT_BALL, SUPER_POTION, REVIVE, ESCAPE_ROPE, SUPER_REPEL, ANTIDOTE, BURN_HEAL, ICE_HEAL, PARLYZ_HEAL
+;LavenderMartClerkText::
+;	script_mart GREAT_BALL, SUPER_POTION, REVIVE, ESCAPE_ROPE, SUPER_REPEL, ANTIDOTE, BURN_HEAL, ICE_HEAL, PARLYZ_HEAL
 
 CeladonMart2FClerk1Text::
 	script_mart GREAT_BALL, SUPER_POTION, REVIVE, SUPER_REPEL, ANTIDOTE, BURN_HEAL, ICE_HEAL, AWAKENING, PARLYZ_HEAL

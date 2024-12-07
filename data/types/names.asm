@@ -10,20 +10,23 @@ TypeNames:
 	dw .Bird
 	dw .Bug
 	dw .Ghost
+        dw .Steel
 
 REPT UNUSED_TYPES_END - UNUSED_TYPES
-	dw .Normal
+        dw .Normal
 ENDR
 
-	dw .Fire
-	dw .Water
-	dw .Grass
-	dw .Electric
-	dw .Psychic
-	dw .Ice
-	dw .Dragon
+        dw .Fire
+        dw .Water
+        dw .Grass
+        dw .Electric
+        dw .Psychic
+        dw .Ice
+        dw .Dragon
+        dw .Dark
+        dw .Fairy
 
-	assert_table_length NUM_TYPES
+        assert_table_length NUM_TYPES
 
 .Normal:   db "NORMAL@"
 .Fighting: db "FIGHTING@"
@@ -37,7 +40,10 @@ ENDR
 .Ice:      db "ICE@"
 .Ground:   db "GROUND@"
 .Rock:     db "ROCK@"
-.Bird:     db "BIRD@"
+.Bird:     db "TYPELESS@"
 .Bug:      db "BUG@"
 .Ghost:    db "GHOST@"
 .Dragon:   db "DRAGON@"
+.Dark:     db "DARK@"
+.Fairy:    db "FAIRY@"
+.Steel:    db "STEEL@" 

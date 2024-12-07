@@ -58,7 +58,9 @@ VictoryRoad2FDefaultScript:
 	CheckEventAfterBranchReuseHL EVENT_VICTORY_ROAD_2_BOULDER_ON_SWITCH2, EVENT_VICTORY_ROAD_2_BOULDER_ON_SWITCH1
 	SetEventReuseHL EVENT_VICTORY_ROAD_2_BOULDER_ON_SWITCH2
 	ret nz
+	ld de, wSprite13StateData1YPixels ; added thomastenberge Commit 5f1c0c3
 .set_script_flag
+	callfar BoulderOnButtonAnim ; added thomastenberge Commit 5f1c0c3
 	ld hl, wCurrentMapScriptFlags
 	set BIT_CUR_MAP_LOADED_1, [hl]
 	ret

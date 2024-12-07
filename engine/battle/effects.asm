@@ -293,7 +293,7 @@ FreezeBurnParalyzeEffect:
 	ld hl, BurnedText
 	jp PrintText
 .freeze2
-; hyper beam bits aren't reseted for opponent's side
+	call ClearHyperBeam
 	ld a, 1 << FRZ
 	ld [wBattleMonStatus], a
 	ld hl, FrozenText
@@ -508,6 +508,18 @@ RestoreOriginalStatModifier:
 	dec [hl]
 
 PrintNothingHappenedText:
+;;;;;;;;;; PureRGBnote: ADDED: for damaging moves that raise a stat on using them, skip printing "Nothing Happened!" when using them with maxed stats
+	ldh a, [hWhoseTurn]
+	and a
+	ld a, [wPlayerMoveNum]
+	jr z, .playerTurn
+	ld a, [wEnemyMoveNum]
+.playerTurn
+	cp SUBMISSION
+	ret z ; if the move is a side effect, skip writing "nothing happened"
+	cp RAGE
+	ret z ; if the move is a side effect, skip writing "nothing happened"
+;;;;;;;;;;
 	ld hl, NothingHappenedText
 	jp PrintText
 

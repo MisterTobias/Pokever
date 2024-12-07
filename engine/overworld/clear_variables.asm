@@ -9,6 +9,7 @@ ClearVariablesOnEnterMap::
 	ldh [hJoyPressed], a
 	ldh [hJoyReleased], a
 	ldh [hJoyHeld], a
+	; ld [wMuteAudioAndPauseMusic], a ; "make sure music is unpaused on loading a new map", thomastenberge Commit e2f0ccf
 	ld [wActionResultOrTookBattleTurn], a
 	ld [wUnusedMapVariable], a
 	ld hl, wCardKeyDoorY

@@ -76,3 +76,7 @@ _PokemonTower7FRocket3AfterBattleText::
 	text "You're not getting"
 	line "away with this!"
 	done
+
+_AnnihilapeBattleText::
+	text "teste123!@"
+	text_end

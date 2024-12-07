@@ -173,7 +173,7 @@ PokedexEntryPointers:
 	dw AerodactylDexEntry
 	dw MissingNoDexEntry
 	dw MagnemiteDexEntry
-	dw MissingNoDexEntry
+	dw PrimeapeDexEntry
 	dw MissingNoDexEntry
 	dw CharmanderDexEntry
 	dw SquirtleDexEntry
@@ -1175,6 +1175,13 @@ MagnemiteDexEntry:
 	db 1,0
 	dw 130
 	text_far _MagnemiteDexEntry
+	text_end
+
+AnnihilapeDexEntry:
+	db "MAGNET@"
+	db 1,0
+	dw 130
+	text_far _AnnihilapeDexEntry
 	text_end
 
 CharmanderDexEntry:

@@ -66,7 +66,7 @@ def transpose(tiles, width=None):
     """
     if width == None:
         width = int(sqrt(len(tiles))) # assume square image
-    tiles = sorted(enumerate(tiles), key= lambda (i, tile): i % width)
+    tiles = sorted(enumerate(tiles), key= lambda i, tile: i % width)
     return [tile for i, tile in tiles]
 
 def transpose_tiles(image, width=None):
@@ -484,7 +484,7 @@ def convert_2bpp_to_png(image, **kwargs):
                 matches += [(w, h)]
         # go for the most square image
         if len(matches):
-            width, height = sorted(matches, key= lambda (w, h): (h % 8 != 0, w + h))[0] # favor height
+            width, height = sorted(matches, key= lambda w, h: (h % 8 != 0, w + h))[0] # favor height
         else:
             raise Exception, 'Image can\'t be divided into tiles (%d px)!' % (px_length(image))
 

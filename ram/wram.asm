@@ -727,6 +727,7 @@ wSlotMachineWheel2TopTile:: db
 wSlotMachineWheel3BottomTile:: db
 wSlotMachineWheel3MiddleTile:: db
 wSlotMachineWheel3TopTile:: db
+wStartBattleLevels:: ds PARTY_LENGTH ; which is 6 bytes
 wPayoutCoins:: dw
 ; These flags are set randomly and control when the wheels stop.
 ; bit 6: allow the player to win in general
@@ -1769,7 +1770,14 @@ wRivalName:: ds NAME_LENGTH
 wOptions:: db
 
 wObtainedBadges:: flag_array NUM_BADGES
-
+;	BIT_BOULDERBADGE , 0	just a memo
+;	BIT_CASCADEBADGE , 1	just a memo
+;	BIT_THUNDERBADGE , 2	just a memo
+;	BIT_RAINBOWBADGE , 3	just a memo
+;	BIT_SOULBADGE    , 4	just a memo
+;	BIT_MARSHBADGE   , 5	just a memo
+;	BIT_VOLCANOBADGE , 6	just a memo
+;	BIT_EARTHBADGE   , 7	just a memo
 	ds 1
 
 wLetterPrintingDelayFlags:: db
@@ -2200,7 +2208,11 @@ ENDU
 
 wTrainerHeaderPtr:: dw
 
-	ds 6
+wCutTrees::
+; Check CutTreeLocations for the indexes
+	ds 3
+; unused?
+	ds 3
 
 ; the trainer the player must face after getting a wrong answer in the Cinnabar
 ; gym quiz
