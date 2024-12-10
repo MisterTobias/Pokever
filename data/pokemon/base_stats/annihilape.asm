@@ -1,4 +1,4 @@
-	db DEX_ANNIHILAPE; pokedex id ; define byte
+	db DEX_PRIMEAPE; pokedex id ; define byte
 
 	db 110, 115,  80,  90,  50
 	;   hp  atk  def  spd  spc

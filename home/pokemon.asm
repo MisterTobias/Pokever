@@ -376,69 +376,16 @@ GetMonHeader::
 	ldh a, [hLoadedROMBank]
 	push af
 	ld a, BANK(BaseStats)
-	ldh [hLoadedROMBank], a
-	ld [MBC1RomBank], a
-	push bc
-	push de
-	push hl
-	ld a, [wPokedexNum]
-	push af
-	ld a, [wCurSpecies]
-	ld [wPokedexNum], a
-	ld de, FossilKabutopsPic
-	ld b, $66 ; size of Kabutops fossil and Ghost sprites
-	cp FOSSIL_KABUTOPS ; Kabutops fossil
-	jr z, .specialID
-	ld de, GhostPic
-	cp MON_GHOST ; Ghost
-	jr z, .specialID
-	ld de, FossilAerodactylPic
-	ld b, $77 ; size of Aerodactyl fossil sprite
-	cp FOSSIL_AERODACTYL ; Aerodactyl fossil
-	jr z, .specialID
-;	cp MEW
-;	jr z, .mew
-	predef IndexToPokedex
-	ld a, [wPokedexNum]
-	dec a
-	ld bc, BASE_DATA_SIZE
-	ld hl, BaseStats
-	call AddNTimes
-	ld de, wMonHeader
-	ld bc, BASE_DATA_SIZE
-	call CopyData
-	jr .done
-.specialID
-	ld hl, wMonHSpriteDim
-	ld [hl], b ; write sprite dimensions
-	inc hl
-	ld [hl], e ; write front sprite pointer
-	inc hl
-	ld [hl], d
-;	jr .done
-;.mew
-;	ld hl, MewBaseStats
-;	ld de, wMonHeader
-;	ld bc, BASE_DATA_SIZE
-;	ld a, BANK(MewBaseStats)
-;	call FarCopyData
-.done
-	ld a, [wCurSpecies]
-	ld [wMonHIndex], a
+	call SetRomBank
+	call GetMonHeader2 ; moved to BaseStats bank because it was getting unwieldy
 	pop af
-	ld [wPokedexNum], a
-	pop hl
-	pop de
-	pop bc
-	pop af
-	ldh [hLoadedROMBank], a
-	ld [MBC1RomBank], a
-	ret
+	jp SetRomBank
 
 ; copy party pokemon's name to wNameBuffer
 GetPartyMonName2::
 	ld a, [wWhichPokemon] ; index within party
 	ld hl, wPartyMonNicks
+	jp GetPartyMonName
 
 ; this is called more often
 GetPartyMonName::

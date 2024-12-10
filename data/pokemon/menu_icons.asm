@@ -152,4 +152,4 @@ MonPartyData:
 	nybble ICON_MON       ; Mewtwo
 	nybble ICON_MON       ; Mew
 	nybble ICON_MON
-	end_nybble_array NUM_POKEMON
+	end_nybble_array NUM_POKEMON + 1

@@ -18,3 +18,12 @@ MACRO dict
 	ENDC
 	jp z, \2
 ENDM
+
+MACRO de_deref
+    IF _NARG > 0
+        ld hl, \1
+    ENDC
+    ld a, [hli]
+    ld d, [hl]
+    ld e, a
+ENDM
