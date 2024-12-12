@@ -11,43 +11,43 @@ ENDM
 Moves:
 ; Characteristics of each move.
 	table_width MOVE_LENGTH, Moves
-	move POUND,        NO_ADDITIONAL_EFFECT,        40, NORMAL,       100, 35
-	move KARATE_CHOP,  NO_ADDITIONAL_EFFECT,        50, NORMAL,       100, 25
-	move DOUBLESLAP,   TWO_TO_FIVE_ATTACKS_EFFECT,  15, NORMAL,        85, 10
-	move COMET_PUNCH,  TWO_TO_FIVE_ATTACKS_EFFECT,  18, NORMAL,        85, 15
-	move MEGA_PUNCH,   NO_ADDITIONAL_EFFECT,        80, NORMAL,        85, 20
-	move PAY_DAY,      PAY_DAY_EFFECT,              40, NORMAL,       100, 20
-	move FIRE_PUNCH,   BURN_SIDE_EFFECT1,           75, FIRE,         100, 15
-	move ICE_PUNCH,    FREEZE_SIDE_EFFECT,          75, ICE,          100, 15
-	move THUNDERPUNCH, PARALYZE_SIDE_EFFECT1,       75, ELECTRIC,     100, 15
-	move SCRATCH,      NO_ADDITIONAL_EFFECT,        40, NORMAL,       100, 35
-	move VICEGRIP,     NO_ADDITIONAL_EFFECT,        55, NORMAL,       100, 30
-	move GUILLOTINE,   OHKO_EFFECT,                  1, NORMAL,        30,  5
-	move RAZOR_WIND,   CHARGE_EFFECT,               80, NORMAL,       100, 10
-	move SWORDS_DANCE, ATTACK_UP2_EFFECT,            0, NORMAL,       100, 20
-	move CUT,          NO_ADDITIONAL_EFFECT,        50, NORMAL,        95, 30
-	move GUST,         NO_ADDITIONAL_EFFECT,        40, FLYING,       100, 35
-	move WING_ATTACK,  NO_ADDITIONAL_EFFECT,        60, FLYING,       100, 35
-	move WHIRLWIND,    SWITCH_AND_TELEPORT_EFFECT,   0, NORMAL,       100, 20
-	move FLY,          FLY_EFFECT,                  90, FLYING,        95, 15
-	move BIND,         TRAPPING_EFFECT,             15, NORMAL,        85, 20
-	move SLAM,         NO_ADDITIONAL_EFFECT,        80, NORMAL,        75, 20
-	move VINE_WHIP,    NO_ADDITIONAL_EFFECT,        45, GRASS,        100, 25
-	move STOMP,        FLINCH_SIDE_EFFECT2,         65, NORMAL,       100, 20
-	move DOUBLE_KICK,  ATTACK_TWICE_EFFECT,         30, FIGHTING,     100, 30
-	move MEGA_KICK,    NO_ADDITIONAL_EFFECT,       120, NORMAL,        75,  5
-	move JUMP_KICK,    JUMP_KICK_EFFECT,           100, FIGHTING,      95, 10
-	move ROLLING_KICK, FLINCH_SIDE_EFFECT2,         60, FIGHTING,      85, 15
-	move SAND_ATTACK,  ACCURACY_DOWN1_EFFECT,        0, GROUND,       100, 15
-	move HEADBUTT,     FLINCH_SIDE_EFFECT2,         70, NORMAL,       100, 15
-	move HORN_ATTACK,  NO_ADDITIONAL_EFFECT,        65, NORMAL,       100, 25
-	move FURY_ATTACK,  TWO_TO_FIVE_ATTACKS_EFFECT,  15, NORMAL,        85, 20
-	move HORN_DRILL,   OHKO_EFFECT,                  1, NORMAL,        30,  5
-	move TACKLE,       NO_ADDITIONAL_EFFECT,        40, NORMAL,       100, 35
-	move BODY_SLAM,    PARALYZE_SIDE_EFFECT2,       85, NORMAL,       100, 15
-	move WRAP,         TRAPPING_EFFECT,             15, NORMAL,        90, 20
-	move TAKE_DOWN,    RECOIL_EFFECT,               90, NORMAL,        85, 20
-	move THRASH,       THRASH_PETAL_DANCE_EFFECT,  120, NORMAL,       100, 10
+	move POUND,        NO_ADDITIONAL_EFFECT,        40, NORMAL,       100, 35 ;done
+	move KARATE_CHOP,  NO_ADDITIONAL_EFFECT,        50, FIGHTING,     100, 25 ;done
+	move DOUBLESLAP,   TWO_TO_FIVE_ATTACKS_EFFECT,  15, NORMAL,        85, 10 ;done
+	move COMET_PUNCH,  TWO_TO_FIVE_ATTACKS_EFFECT,  18, NORMAL,        85, 15 ;done
+	move MEGA_PUNCH,   NO_ADDITIONAL_EFFECT,        80, NORMAL,        85, 20 ;done
+	move PAY_DAY,      PAY_DAY_EFFECT,              40, NORMAL,       100, 20 ;done
+	move FIRE_PUNCH,   BURN_SIDE_EFFECT1,           75, FIRE,         100, 15 ;check effect?
+	move ICE_PUNCH,    FREEZE_SIDE_EFFECT,          75, ICE,          100, 15 ;check effect?
+	move THUNDERPUNCH, PARALYZE_SIDE_EFFECT1,       75, ELECTRIC,     100, 15 ;check effect?
+	move SCRATCH,      NO_ADDITIONAL_EFFECT,        40, NORMAL,       100, 35 ;done
+	move VICEGRIP,     NO_ADDITIONAL_EFFECT,        55, NORMAL,       100, 30 ;done
+	move GUILLOTINE,   OHKO_EFFECT,                  1, NORMAL,        30,  5 ;done
+	move RAZOR_WIND,   CHARGE_EFFECT,               80, NORMAL,       100, 10 ;done
+	move SWORDS_DANCE, ATTACK_UP2_EFFECT,            0, NORMAL,       100, 20 ;done
+	move CUT,          NO_ADDITIONAL_EFFECT,        50, NORMAL,        95, 30 ;remake maybe
+	move GUST,         NO_ADDITIONAL_EFFECT,        40, FLYING,       100, 35 ;done
+	move WING_ATTACK,  NO_ADDITIONAL_EFFECT,        60, FLYING,       100, 35 ;done
+	move WHIRLWIND,    SWITCH_AND_TELEPORT_EFFECT,   0, NORMAL,       100, 20 ;priority?
+	move FLY,          FLY_EFFECT,                  90, FLYING,        95, 15 ;done
+	move BIND,         TRAPPING_EFFECT,             15, NORMAL,        85, 20 ;done
+	move SLAM,         NO_ADDITIONAL_EFFECT,        80, NORMAL,        75, 20 ;done
+	move VINE_WHIP,    NO_ADDITIONAL_EFFECT,        45, GRASS,        100, 25 ;done
+	move STOMP,        FLINCH_SIDE_EFFECT2,         65, NORMAL,       100, 20 ;done
+	move DOUBLE_KICK,  ATTACK_TWICE_EFFECT,         30, FIGHTING,     100, 30 ;done
+	move MEGA_KICK,    NO_ADDITIONAL_EFFECT,       120, NORMAL,        75,  5 ;done
+	move JUMP_KICK,    JUMP_KICK_EFFECT,           100, FIGHTING,      95, 10 ;recoil?
+	move ROLLING_KICK, FLINCH_SIDE_EFFECT2,         60, FIGHTING,      85, 15 ;done
+	move SAND_ATTACK,  ACCURACY_DOWN1_EFFECT,        0, GROUND,       100, 15 ;done
+	move HEADBUTT,     FLINCH_SIDE_EFFECT2,         70, NORMAL,       100, 15 ;done
+	move HORN_ATTACK,  NO_ADDITIONAL_EFFECT,        65, NORMAL,       100, 25 ;done
+	move FURY_ATTACK,  TWO_TO_FIVE_ATTACKS_EFFECT,  15, NORMAL,        85, 20 ;done
+	move HORN_DRILL,   OHKO_EFFECT,                  1, NORMAL,        30,  5 ;done
+	move TACKLE,       NO_ADDITIONAL_EFFECT,        40, NORMAL,       100, 35 ;done
+	move BODY_SLAM,    PARALYZE_SIDE_EFFECT2,       85, NORMAL,       100, 15 ;done
+	move WRAP,         TRAPPING_EFFECT,             15, NORMAL,        90, 20 ;done
+	move TAKE_DOWN,    RECOIL_EFFECT,               90, NORMAL,        85, 20 ;done
+	move THRASH,       THRASH_PETAL_DANCE_EFFECT,  120, NORMAL,       100, 10 ;done
 	move DOUBLE_EDGE,  RECOIL_EFFECT,              120, NORMAL,       100, 15
 	move TAIL_WHIP,    DEFENSE_DOWN1_EFFECT,         0, NORMAL,       100, 30
 	move POISON_STING, POISON_SIDE_EFFECT1,         15, POISON,       100, 35
