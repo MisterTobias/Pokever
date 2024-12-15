@@ -66,10 +66,18 @@ SpecialMonCustomPalettes:
 ; HAXed to give trainers palettes independantly
 ; Also skips the "transform" check, caller does that instead
 DeterminePaletteID:
+	push bc ;;;
 	ld [wPokedexNum], a
 	and a
 
-	push bc
+	;;;push bc
+
+	ld a, [wPokedexNum]
+	ld hl, SpecialMonCustomPalettes
+	ld de, 2
+	call IsInArray
+	jr c, .specialMonPalette
+
 	predef IndexToPokedex ; turn Pokemon ID number into Pokedex number
 	pop bc
 
@@ -77,16 +85,7 @@ DeterminePaletteID:
 	ld hl, MonsterPalettes
 	and a
 	jr nz, .skipDexNumConversion ; Check if trainer?
-
-        ld a, [wPokedexNum]
-        ld hl, SpecialMonCustomPalettes
-        ld de, 2
-        call IsInArray
-        ld e, a
-	ld d, $00
-	add hl, de
-	ld a, [hl]
-	ret
+	
 IF GEN_2_GRAPHICS ; Trainers are given individualized palettes
 	; In link battle, don't rely in wTrainerClass (for some reason it's set to
 	; OPP_GARY, so ignore it)
@@ -115,7 +114,13 @@ ENDC
 	add hl, de
 	ld a, [hl]
 	ret
-	
+
+.specialMonPalette
+	inc hl
+	pop bc
+	xor a
+	ld a, [hl]
+	ret
 
 DetermineBackSpritePaletteID:
 	ld [wPokedexNum], a
