@@ -74,6 +74,15 @@ DeterminePaletteID:
 	and a
 	jr nz, .skipDexNumConversion ; Check if trainer?
 
+        ld a, [wPokedexNum]
+        ld hl, SpecialMonCustomPalettes
+        ld de, 2
+        call IsInArray
+        ld e, a
+	ld d, $00
+	add hl, de
+	ld a, [hl]
+	ret
 IF GEN_2_GRAPHICS ; Trainers are given individualized palettes
 	; In link battle, don't rely in wTrainerClass (for some reason it's set to
 	; OPP_GARY, so ignore it)
