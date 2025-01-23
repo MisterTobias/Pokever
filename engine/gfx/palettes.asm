@@ -59,24 +59,23 @@ SetPalFunctions:
 	dw SetPal_NameEntry	   ; Name entry (partially replaces 08)
 	dw SetPal_BattleAfterBlack ; Like SetPal_Battle but specifically for clearing the black palettes
 
-SpecialMonCustomPalettes:
+SpecialMonPalettes:
         db ANNIHILAPE, PAL_ANNIHILAPE
         db -1
 
 ; HAXed to give trainers palettes independantly
 ; Also skips the "transform" check, caller does that instead
 DeterminePaletteID:
-	push bc ;;;
 	ld [wPokedexNum], a
 	and a
 
-	;;;push bc
+	push bc
 
 	ld a, [wPokedexNum]
-	ld hl, SpecialMonCustomPalettes
+	ld hl, SpecialMonPalettes
 	ld de, 2
 	call IsInArray
-	jr c, .specialMonPalette
+	jr c, .specialMonFrontPalette
 
 	predef IndexToPokedex ; turn Pokemon ID number into Pokedex number
 	pop bc
@@ -115,7 +114,7 @@ ENDC
 	ld a, [hl]
 	ret
 
-.specialMonPalette
+.specialMonFrontPalette
 	inc hl
 	pop bc
 	xor a
@@ -127,6 +126,13 @@ DetermineBackSpritePaletteID:
 	and a
 
 	push bc
+
+	ld a, [wPokedexNum]
+	ld hl, SpecialMonPalettes
+	ld de, 2
+	call IsInArray
+	jr c, .specialMonBackPalette
+
 	predef IndexToPokedex ; turn Pokemon ID number into Pokedex number
 	pop bc
 
@@ -148,6 +154,12 @@ ENDC
 	ld a, [hl]
 	ret
 
+.specialMonBackPalette
+	inc hl
+	pop bc
+	xor a
+	ld a, [hl]
+	ret	
 
 SECTION "InitPartyMenuBlkPacket", ROMX
 

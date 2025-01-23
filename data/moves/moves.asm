@@ -17,9 +17,9 @@ Moves:
 	move COMET_PUNCH,  TWO_TO_FIVE_ATTACKS_EFFECT,  18, NORMAL,        85, 15 ;done
 	move MEGA_PUNCH,   NO_ADDITIONAL_EFFECT,        80, NORMAL,        85, 20 ;done
 	move PAY_DAY,      PAY_DAY_EFFECT,              40, NORMAL,       100, 20 ;done
-	move FIRE_PUNCH,   BURN_SIDE_EFFECT1,           75, FIRE,         100, 15 ;check effect?
+	move FIRE_PUNCH,   BURN_SIDE_EFFECT1,           75, FIRE,         100, 15 ;check effect, done
 	move ICE_PUNCH,    FREEZE_SIDE_EFFECT,          75, ICE,          100, 15 ;check effect?
-	move THUNDERPUNCH, PARALYZE_SIDE_EFFECT1,       75, ELECTRIC,     100, 15 ;check effect?
+	move THUNDERPUNCH, PARALYZE_SIDE_EFFECT1,       75, ELECTRIC,     100, 15 ;check effect, done
 	move SCRATCH,      NO_ADDITIONAL_EFFECT,        40, NORMAL,       100, 35 ;done
 	move VICEGRIP,     NO_ADDITIONAL_EFFECT,        55, NORMAL,       100, 30 ;done
 	move GUILLOTINE,   OHKO_EFFECT,                  1, NORMAL,        30,  5 ;done
@@ -48,13 +48,13 @@ Moves:
 	move WRAP,         TRAPPING_EFFECT,             15, NORMAL,        90, 20 ;done
 	move TAKE_DOWN,    RECOIL_EFFECT,               90, NORMAL,        85, 20 ;done
 	move THRASH,       THRASH_PETAL_DANCE_EFFECT,  120, NORMAL,       100, 10 ;done
-	move DOUBLE_EDGE,  RECOIL_EFFECT,              120, NORMAL,       100, 15
-	move TAIL_WHIP,    DEFENSE_DOWN1_EFFECT,         0, NORMAL,       100, 30
-	move POISON_STING, POISON_SIDE_EFFECT1,         15, POISON,       100, 35
-	move TWINEEDLE,    TWINEEDLE_EFFECT,            25, BUG,          100, 20
+	move DOUBLE_EDGE,  RECOIL_EFFECT,              120, NORMAL,       100, 15	;done
+	move TAIL_WHIP,    DEFENSE_DOWN1_EFFECT,         0, NORMAL,       100, 30	;done
+	move POISON_STING, POISON_SIDE_EFFECT1,         15, POISON,       100, 35	;done
+	move TWINEEDLE,    TWINEEDLE_EFFECT,            25, BUG,          100, 20	;done, needs testing
 	move PIN_MISSILE,  TWO_TO_FIVE_ATTACKS_EFFECT,  25, BUG,           95, 20
 	move LEER,         DEFENSE_DOWN1_EFFECT,         0, NORMAL,       100, 30
-	move BITE,         FLINCH_SIDE_EFFECT2,         60, DARK,	  100, 25
+	move BITE,         FLINCH_SIDE_EFFECT2,         60, DARK,         100, 25
 	move GROWL,        ATTACK_DOWN1_EFFECT,          0, NORMAL,       100, 40
 	move ROAR,         SWITCH_AND_TELEPORT_EFFECT,   0, NORMAL,       100, 20
 	move SING,         SLEEP_EFFECT,                 0, NORMAL,        55, 15

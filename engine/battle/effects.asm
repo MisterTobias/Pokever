@@ -103,6 +103,9 @@ PoisonEffect:
 	cp POISON_SIDE_EFFECT2
 	ld b, 40 percent + 1 ; chance of poisoning
 	jr z, .sideEffectTest
+	CP TWINEEDLE_POISON_EFFECT
+	ld b, 36 percent + 1 ; chance of poisoning
+ jr z,	.sideEffectTest
 	push hl
 	push de
 	call MoveHitTest ; apply accuracy tests
@@ -974,7 +977,7 @@ TwoToFiveAttacksEffect:
 	ld [bc], a
 	ret
 .twineedle
-	ld a, POISON_SIDE_EFFECT1
+	ld a, TWINEEDLE_POISON_EFFECT
 	ld [hl], a ; set Twineedle's effect to poison effect
 	jr .saveNumberOfHits
 
